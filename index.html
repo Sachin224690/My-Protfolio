@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--navbar starts-->
+    <header>
+        <div class="sachin">
+            <a href="#home" class="logo">
+                <span class="logo-text">Software Developer</span>
+            </a>
+            <button class="menu-toggle" aria-label="toggle navigation">
+                &#9776;
+            </button>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Education">Education</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--navbar ends-->
+
+    <!--profile section starts-->
+    <section id="profile" class="profile">
+        <div class="container">
+        <div class="profile-text">
+            <h1>Hello, I'M an Web Developer Enginner</h1>
+            <p>Specialization in Web Developer</p>
+        </div>
+        <div class="profile-image">
+            <img src="C:\Users\sachi\Documents\IMG_20230606_095216_594.jpg" alt="Developer Image">
+        </div>
+        </div>
+    </section>
+    <!--profile section ends-->
+
+    <!--Abouts me section starts-->
+    <section id="about" class="about">
+        <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+            <p>I am a passionate Web developer with a strong background in html css</p>
+            <a href="file:///C:/Users/sachi/Documents/SACHIN%20BOHARA%201.pdf" class="btn" download> Download my Resume</a>      
+          </div>
+          <!--<div class="about-image"-->
+          <img src="C:\Users\sachi\Documents\IMG_20230606_095216_594.jpg" alt="Your Name">
+        </div> --
+    </div>
+</div>
+    </section>
+    <!--About Me section ends-->
+
+
+<!--education section starts -->
+<section id="Education" class="Education">
+    <div class="container">
+        <h2>Education</h2>
+        <!--<div class="education-item">
+        <h3>master' Degree in artificial intelligence</h3>
+        <p>university of xyz, 2018 - 2020</p>
+        <p>details about the program, project,and achievement</p>
+        </div> -->
+        <div class="Education-item">
+            <h3>Bechelor's Degree in Computer Application</h3>
+            <P>University Of Jai Narayan Vyas Jodhpur 2022 - 2024 </P>
+            <p>Details about the program, project, achievement</p>
+        </div>
+    </div>
+</section>
+<!--Education section ends-->
+
+    <!--skills section starts-->
+    <section id="Skills" class="Skills">
+        <div class="container">
+            <h2>Skills</h2>
+        <div class="Skills-grid">
+            <div class="Skills-item">
+                <h3>Html</h3>
+                <div class="skill-bar">
+                <div class="Skills-level" style="width: 90%;"></div>
+            </div>
+            </div>
+        <div class="Skills-item">
+            <h3>Css</h3>
+            <div class="skill-bar">
+            <div class="Skills-level" style="width: 85%;"></div>
+        </div>
+    </div>
+    <div class="Skills-item">
+        <h3>Java Programming</h3>
+        <div class="skill-bar">
+        <div class="Skills-level" style="width: 75%;"></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!--skiils section ends-->
+
+    <!--project section starts-->
+    <section id="Projects" class="Projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="Projects-grid">
+                <div class="project-item">
+            </div>
+        </div>
+    </section>
+    <!--project section ends-->
+
+    <!--contact me section starts-->
+    <section id="Contact" class="Contact">
+        <div class="container">
+            <h2>contact me</h2>
+            <form id="contactform" action="#" mathod="post">
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="massage">Massage</label>
+                    <textarea id="massage" name="massage"  rows="5" required></textarea>
+                    </div>
+                    <button type="submit" id="submitbtn">Send Massage</button>
+            </form>
+            <DIV id="responsemassage"></DIV>
+        </div>
+    </section>
+    <!--Contact section ends-->
+
+    <!--Fotter section starts-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-contect">
+                <p>&copy; 2024 Sachin Bohara All rights reseved.</p>
+                <div class="social-media">
+                    <a href=""></a>
+                    <a href=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer section ends-->
+
+
+    <script>
+        document.addEventListener('DOMContectLoaded', function () {
+            const menutoggle = document.querySelector('.menu-toogle');
+            const navbar = document .querySelector('.navbar')
+
+            menutoggle.addEventListener('click',function(){
+                navbar.classList.toggle('show');
+            });
+        });
+
+        document.addEventListener('DOMContectloaded', function(){
+            const form = document.getElementById('contactform');
+            const submitbtn = document.getElementById('submitbtn');
+            const responsemassage = document.getElementById('responcemessage');
+
+            form.addEventListener('submit', function (event){
+                event.preventDefault(); //prevent default form submision
+
+                // validate form fields
+                if (!validateform()) {
+                    return;
+
+                }
+                //prepare data to send
+                const formData = new FormData(form);
+
+                //send data to server (mocking the response here)
+                //in a real scenario, this would be an ajax request to your server-side endpoints
+                setTimeout(() => {
+                    responsemassage.innerHTML = <P>message sent successfully!</P>;
+                    form. reset();
+                }, 1000); //simlate server response time
+            
+        });
+        function validdataform() {
+            let isvalid = true;
+            const name = form.elements['name'].value.trim();
+            const email = form.elements['email'].value.trim();
+            const massage= form.elements['massage'].value.trim();
+            
+            if (name===''){
+                isvalid = false;
+                alert('please enter your name.');
+            } else if (email===''){
+                isvalid = false;
+            alert('please enter  your email.');
+            }else if (!isvalidEmail(email)){
+                isvalid = false;
+                alert('please enter a valid email address.');
+            } else if (massage===''){
+                isvalid = false;
+                alert('please enter your message.');
+            }
+            return isvalid;
+        }
+
+        function isvalidEmail(email) {
+            //basic email validation using regex
+            const regex = /^[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+            
+        }
+    });
+    </script>
+</body>
+</html>
